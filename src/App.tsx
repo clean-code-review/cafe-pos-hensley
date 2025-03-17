@@ -4,10 +4,10 @@ import viteLogo from '/vite.svg'
 
 function App() {
   const [count, setCount] = useState(0)
-  
+
   return (
     <>
-    <button>++</button>
+      <button>++</button>
       <div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
