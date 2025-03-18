@@ -1,10 +1,16 @@
-export const Category = {
+export const MenuCategory = {
   coffee: 'Coffee',
   smoothie: 'smoothie',
   tea: 'Tea',
   bakery: 'Bakery',
 } as const
 
+export interface CategoryDTO {
+  id: MenuCategories
+  name: string
+}
+
+export type MenuCategories = keyof typeof MenuCategory
 export type MenuOption = {
   id: string
   name: string
@@ -24,11 +30,7 @@ export const OPTION_CATEGORY = {
 } as const
 
 // 옵션 카테고리 타입
-export type OptionCategory =
-  | 'temperature'
-  | 'size'
-  | 'cup'
-  | 'etc'
+export type OptionCategory = 'temperature' | 'size' | 'cup' | 'etc'
 
 export type MenuItemOption = {
   name: string
@@ -60,7 +62,7 @@ export interface ExtraOption extends MenuItemOption {
 
 // 카테고리 이름 표시용 함수
 export const getCategoryDisplayName = (
-  category: keyof typeof Category,
+  category: keyof typeof MenuCategory,
 ): string => {
   switch (category) {
     case 'coffee':

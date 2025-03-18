@@ -6,8 +6,7 @@ export const coffeeItems = [
     id: 'coffee-americano',
     name: '아메리카노',
     price: 4500,
-    description:
-      '깊고 진한 에스프레소에 물을 더한 클래식 커피',
+    description: '깊고 진한 에스프레소에 물을 더한 클래식 커피',
     category: 'coffee',
     options: {
       temperature: [
@@ -89,8 +88,7 @@ export const teaItems = [
     id: 'tea-earl-grey',
     name: '얼그레이 티',
     price: 4500,
-    description:
-      '베르가못 오일의 향긋함이 특징인 클래식 블랙 티',
+    description: '베르가못 오일의 향긋함이 특징인 클래식 블랙 티',
     category: 'tea',
     options: {
       temperature: [
@@ -160,8 +158,7 @@ export const smoothieItems = [
     id: 'smoothie-strawberry',
     name: '딸기 스무디',
     price: 6000,
-    description:
-      '신선한 딸기와 요거트가 블렌딩된 부드러운 스무디',
+    description: '신선한 딸기와 요거트가 블렌딩된 부드러운 스무디',
     category: 'smoothie',
     options: {
       size: [
@@ -184,8 +181,7 @@ export const smoothieItems = [
     id: 'smoothie-mango',
     name: '망고 스무디',
     price: 6500,
-    description:
-      '열대 과일의 여왕 망고의 달콤함을 그대로 담은 스무디',
+    description: '열대 과일의 여왕 망고의 달콤함을 그대로 담은 스무디',
     category: 'smoothie',
     options: null, // 명시적 null
     available: false,
@@ -194,8 +190,7 @@ export const smoothieItems = [
     id: 'smoothie-blueberry',
     name: '블루베리 스무디',
     price: {}, // 잘못된 타입
-    description:
-      '달콤하고 상큼한 블루베리의 풍미가 가득한 스무디',
+    description: '달콤하고 상큼한 블루베리의 풍미가 가득한 스무디',
     category: 'smoothie',
     options: {
       size: null, // 명시적 null
@@ -227,8 +222,7 @@ export const bakeryItems = [
     id: 'bakery-croissant',
     name: '크루아상',
     price: 3500,
-    description:
-      '바삭한 겉면과 부드러운 속을 가진 전통 프랑스식 크루아상',
+    description: '바삭한 겉면과 부드러운 속을 가진 전통 프랑스식 크루아상',
     category: 'bakery',
     options: {}, // 빈 객체
     available: true,
@@ -237,8 +231,7 @@ export const bakeryItems = [
     id: 'bakery-cheese-cake',
     name: '뉴욕 치즈케이크',
     price: null, // 명시적 null
-    description:
-      '부드럽고 크리미한 본연의 맛을 살린 뉴욕 스타일 치즈케이크',
+    description: '부드럽고 크리미한 본연의 맛을 살린 뉴욕 스타일 치즈케이크',
     category: 'bakery',
     options: null, // 명시적 null
     available: true,
