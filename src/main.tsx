@@ -4,6 +4,7 @@ import App from './App'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from './shared/utils/queryClient'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ErrorBoundary } from './shared/ErrorBoundary'
 
 async function prepare() {
   if (process.env.NODE_ENV === 'development') {
@@ -19,14 +20,15 @@ const root = ReactDOM.createRoot(
 )
 
 prepare().then(() => {
-  console.log('queryClient', queryClient)
   root.render(
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
         {process.env.NODE_ENV === 'development' && (
           <ReactQueryDevtools initialIsOpen={true} />
         )}
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </QueryClientProvider>
     </React.StrictMode>,
   )

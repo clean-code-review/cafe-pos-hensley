@@ -81,7 +81,7 @@ export const getCategoryDisplayName = (
   }
 }
 
-export interface MenuItem {
+export interface MenuItemType {
   id: string
   name: string
   price: number

@@ -1,8 +1,10 @@
-import { PropsWithChildren } from 'react'
+/**
+ *
+ * @returns CartPanel
+ */
 
-export const CartPanel = ({
-  className,
-  children,
-}: PropsWithChildren & { className?: string }) => (
-  <div className={`pos-cart-panel ${className ?? ''}`}>{children}</div>
+export const CartPanel = () => (
+  <div className={`pos-cart-panel`}>
+    <h1>CartPanel</h1>
+  </div>
 )

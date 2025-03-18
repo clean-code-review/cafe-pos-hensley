@@ -1,7 +1,6 @@
-// src/hooks/query/useMenuQueries.ts
+import { MenuCategories } from '@/types'
 import { useQuery } from '@tanstack/react-query'
-import { menuService } from '../../services/menuService'
-import { MenuItem, MenuCategory } from '@/types'
+import { menuService } from '@/services/menuService'
 
 // 쿼리 키 상수
 export const MENU_QUERY_KEYS = {
@@ -12,22 +11,12 @@ export const MENU_QUERY_KEYS = {
   detail: (id: string) => [...MENU_QUERY_KEYS.details(), id] as const,
 }
 
-// 모든 메뉴 가져오기 훅
-export const useAllMenus = () => {
-  return useQuery< ,Error>({
-    queryKey: MENU_QUERY_KEYS.lists(),
-    queryFn: () => menuService.getAllMenus(),
-
-  })
-}
-
 // 카테고리별 메뉴 가져오기 훅
-export const useMenusByCategory = (category: MenuCategory) => {
+export const useMenusByCategory = (category: MenuCategories) => {
   return useQuery({
     queryKey: MENU_QUERY_KEYS.list(category),
     queryFn: () => menuService.getMenusByCategory(category),
     enabled: !!category,
-   
   })
 }
 
