@@ -1,4 +1,4 @@
-import { Category } from './Category'
+import { Category } from '../category/Category'
 import { CategoryDTO, MenuCategories } from '@/types'
 export type CategoryPanelProps = {
   categories: CategoryDTO[]

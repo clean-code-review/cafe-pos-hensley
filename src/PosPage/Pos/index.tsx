@@ -3,7 +3,7 @@ import { Main } from './Main'
 import { Content } from './Content'
 import { OrderPanel } from './OrderPanel'
 import { CartPanel } from './CartPanel'
-import { CategoryPanel } from '@/PosPage/CategoryPanel'
+import { CategoryPanel } from '@/PosPage/Pos/CategoryPanel'
 
 // 서브컴포넌트 연결
 // CartPanel.Item = CartItem

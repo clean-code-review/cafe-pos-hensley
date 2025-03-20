@@ -1,10 +1,10 @@
 /* Axios 인스턴스 및 기본 설정 */
 import axios, { AxiosRequestConfig } from 'axios'
-
+import { config } from '@/posConfig'
 // 기본 인스턴스 생성
 export const apiClient = axios.create({
   baseURL: '/api',
-  timeout: 10000, //10초 TODO: 상수화
+  timeout: config.networkTimeout, //10초
   headers: {
     'Content-Type': 'application/json',
   },

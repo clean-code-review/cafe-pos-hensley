@@ -10,19 +10,33 @@ export interface CategoryDTO {
   name: string
 }
 
-export type MenuCategories = keyof typeof MenuCategory
-export type MenuOption = {
+export interface SelectedMenuDTO {
   id: string
   name: string
-  price: number
-  options: MenuItemOption[]
+  price: number | null
+  selectedOptions: Partial<Record<FixedOptionGroupName, MenuItemOption>>
 }
 
+export type MenuCategories = keyof typeof MenuCategory
+
+export type FixedOptionGroupName = 'temperature' | 'size' | 'cup' | 'extras'
+
+export type MenuItemOption = {
+  id: string
+  name: string
+  price: number | null // null 가격 (무료 옵션)
+}
+
+export type OptionGroup = Partial<
+  Record<FixedOptionGroupName, MenuItemOption[]>
+>
+
+//TODO: remove it later
 export type CupType = 'disposable' | 'mug' | 'personal'
 export type SizeType = 'regular' | 'large' | 'max'
 export type TemperatureType = 'hot' | 'ice'
 
-export const OPTION_CATEGORY = {
+export const OPTION_PROPERTIES = {
   TEMPERATURE: 'temperature',
   SIZE: 'size',
   CUP: 'cup',
@@ -32,29 +46,23 @@ export const OPTION_CATEGORY = {
 // 옵션 카테고리 타입
 export type OptionCategory = 'temperature' | 'size' | 'cup' | 'etc'
 
-export type MenuItemOption = {
-  name: string
-  price: number | null // null 가격 (무료 옵션)
-  category: (typeof OPTION_CATEGORY)[keyof typeof OPTION_CATEGORY]
-}
-
 export interface TemperatureOption extends MenuItemOption {
-  category: typeof OPTION_CATEGORY.TEMPERATURE
+  category: typeof OPTION_PROPERTIES.TEMPERATURE
   value: TemperatureType
 }
 
 export interface SizeOption extends MenuItemOption {
-  category: typeof OPTION_CATEGORY.TEMPERATURE
+  category: typeof OPTION_PROPERTIES.TEMPERATURE
   value: SizeType
 }
 
 export interface CupOption extends MenuItemOption {
-  category: typeof OPTION_CATEGORY.CUP
+  category: typeof OPTION_PROPERTIES.CUP
   value: CupType
 }
 // 기타 옵션 (샷 추가, 시럽 추가 등)
 export interface ExtraOption extends MenuItemOption {
-  category: typeof OPTION_CATEGORY.ETC
+  category: typeof OPTION_PROPERTIES.ETC
   value?: string
 }
 
@@ -80,12 +88,14 @@ export const getCategoryDisplayName = (
     }
   }
 }
+export type CartItemDTO = SelectedMenuDTO & {
+  quantity: number
+}
 
 export interface MenuItemType {
   id: string
   name: string
   price: number
-  description?: string
-  image?: string
   available: boolean
+  options: OptionGroup
 }

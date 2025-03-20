@@ -1,7 +1,12 @@
 import { PosPage } from '@/PosPage'
+import { OverlayProvider } from '@toss/use-overlay'
 
 function App() {
-  return <PosPage />
+  return (
+    <OverlayProvider>
+      <PosPage />
+    </OverlayProvider>
+  )
 }
 
 export default App

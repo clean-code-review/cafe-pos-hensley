@@ -11,10 +11,11 @@ export const CountControl = ({
   decreaseQuantity,
   currentQuantity,
 }: CountControlProps) => {
-  if (!itemId) return null
-
+// if (!itemId) return null
+  console.log('control panel', itemId)
   return (
     <div className="count-control">
+      <p> countcontrol</p>
       <button onClick={() => decreaseQuantity(itemId)}>-</button>
       <p>{currentQuantity}</p>
       <button onClick={() => increaseQuantity(itemId)}>+</button>

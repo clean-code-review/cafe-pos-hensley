@@ -1,4 +1,4 @@
-import { CategoryPanelProps } from './CategoryPanel'
+import { CategoryPanelProps } from '../Pos/CategoryPanel'
 
 type CategoryProps = {
   categories: CategoryPanelProps['categories']
