@@ -23,7 +23,6 @@ export interface UseCartReturn {
 
 export const useCart = () => {
   const [items, setItems] = useState<CartItemDTO[]>([])
-  console.log('useCart triggreed', items)
 
   /**
    * 아이템 수량 증가
@@ -31,7 +30,6 @@ export const useCart = () => {
    */
 
   const increaseQuantity = (id: string | number) => {
-    console.log('increasing', items)
 
     /* 같은 아이템이 있을 경우, quantity만증가 */
     setItems((prevItems) => {
@@ -86,10 +84,8 @@ export const useCart = () => {
    */
 
   const addCartItem = (item: CartItemDTO) => {
-    console.log('addCartItem hook', item)
     setItems((prevItems) => {
       const result = cartService.addCartItem(prevItems, item)
-      console.log('Reuslt', result)
       return result
     })
   }

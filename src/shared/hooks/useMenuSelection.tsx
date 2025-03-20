@@ -16,8 +16,6 @@ export const useMenuSelection = (onFinalSelection) => {
   }
 
   const handleOptionConfirm = (menuWithOptions) => {
-    console.log('confirmed!! 현재 menu', selectedMenu)
-    console.log('셀렉트한 옵션값 파이널: ', menuWithOptions)
     onFinalSelection(menuWithOptions)
     setSelectedMenu(null)
   }
