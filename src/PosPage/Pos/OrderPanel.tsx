@@ -1,7 +1,7 @@
 import { MenuList } from '@/PosPage/MenuList'
 import { useMenusByCategory } from '@/shared/hooks/query/useMenuQueries'
 import { useMenuSelection } from '@/shared/hooks/useMenuSelection'
-import { OptionSelector } from '@/shared/UI/OptionSelector'
+import { OptionSelector } from '@/shared/ui/OptionSelector'
 import { MenuCategories, SelectedMenuDTO } from '@/types'
 
 export const OrderPanel = ({

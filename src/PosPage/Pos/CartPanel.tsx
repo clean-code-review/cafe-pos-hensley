@@ -1,6 +1,6 @@
 import { CartItem } from '@/PosPage/cart/CartItem'
 import { useCart, UseCartReturn } from '@/shared/hooks/useCart'
-import { CountControl } from '@/shared/UI/\bCountControl'
+import { CountControl } from '@/shared/ui/CountControl'
 import { CartItemDTO } from '@/types'
 
 /**
